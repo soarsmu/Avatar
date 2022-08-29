@@ -41,6 +41,6 @@ class Model(nn.Module):
         if labels is not None:
             loss_fct = CrossEntropyLoss()
             loss = loss_fct(logits, labels)
-            return loss, prob
+            return loss, logits
         else:
             return logits

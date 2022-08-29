@@ -157,7 +157,9 @@ def evaluate(args, model, tokenizer, eval_when_training=False):
 
     logits = np.concatenate(logits, 0)
     labels = np.concatenate(labels, 0)
-
+    np.save("../data/preds_unlabel_train", logits)
+    print(logits)
+    exit()
     logits = F.softmax(torch.FloatTensor(logits))
     y_preds = logits[:, 1] > 0.5
     y_preds = y_preds.numpy()

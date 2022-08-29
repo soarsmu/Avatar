@@ -17,7 +17,7 @@ CUDA_VISIBLE_DEVICES=2 python3 finetune.py \
 CUDA_VISIBLE_DEVICES=2 python3 finetune.py \
     --do_eval \
     --train_data_file=../data/label_train.txt \
-    --eval_data_file=../data/test_sampled.txt \
+    --eval_data_file=../data/unlabel_train.txt \
     --epoch 5 \
     --block_size 400 \
     --train_batch_size 2 \
