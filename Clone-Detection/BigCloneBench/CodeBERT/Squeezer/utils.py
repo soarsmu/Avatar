@@ -94,7 +94,7 @@ class DistilledDataset(Dataset):
 
         if "train" in postfix:
             soft_labels = np.load(os.path.join(
-                folder, "preds_unlabel_train_gcb.npy")).tolist()
+                folder, "preds_unlabel_train.npy")).tolist()
 
         _mp_data = []
         for i, d in enumerate(data):
@@ -109,6 +109,7 @@ class DistilledDataset(Dataset):
         pool = multiprocessing.Pool(multiprocessing.cpu_count())
         self.examples = pool.map(
             preprocess, tqdm(_mp_data, total=len(_mp_data)))
+        # self.examples = self.examples[:20]
 
     def __len__(self):
         return len(self.examples)

@@ -30,7 +30,7 @@ class TextDataset(Dataset):
         with open(index_filename) as f:
             for line in f:
                 line = line.strip()
-                url1, url2, label, _ = line.split("\t")
+                url1, url2, label = line.split("\t")
                 if url1 not in url_to_code or url2 not in url_to_code:
                     continue
                 if label == "0":
@@ -42,6 +42,7 @@ class TextDataset(Dataset):
 
         pool = multiprocessing.Pool(multiprocessing.cpu_count())
         self.examples = pool.map(get_example, tqdm(data, total=len(data)))
+        # self.examples = self.examples [:10]
 
     def __len__(self):
         return len(self.examples)

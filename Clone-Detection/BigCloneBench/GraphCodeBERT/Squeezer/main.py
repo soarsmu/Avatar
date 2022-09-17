@@ -519,9 +519,8 @@ def test(args, model, tokenizer, best_threshold=0):
 
     #output result
     logits=np.concatenate(logits,0)
-    # np.save("../data/preds_unlabel_train_gcb", logits)
+    # np.save("../../../data/clone_search/preds_unlabel_train_gcb", logits)
     # print(logits)
-    # exit()
     print(sum(time_count)/len(time_count))
     y_preds=logits[:,1]>best_threshold
     y_trues=np.concatenate(y_trues,0)
@@ -608,7 +607,7 @@ def main():
     args = parser.parse_args()
 
     # Setup CUDA, GPU
-    device = torch.device("cuda")
+    device = torch.device( "cuda")
     args.n_gpu = torch.cuda.device_count()
 
     args.device = device

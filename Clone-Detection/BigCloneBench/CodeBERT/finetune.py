@@ -127,7 +127,7 @@ def train(args, model, tokenizer):
                     else:
                         logger.info("Model checkpoint are not saved")
 
-
+import time
 def evaluate(args, model, tokenizer, eval_when_training=False):
     eval_dataset = load_and_cache_examples(args, tokenizer, evaluate=True)
     eval_sampler = SequentialSampler(eval_dataset)
@@ -144,22 +144,26 @@ def evaluate(args, model, tokenizer, eval_when_training=False):
     model.eval()
     logits = []
     labels = []
-
+    time_count = []
     bar = tqdm(eval_dataloader, total=len(eval_dataloader))
     for batch in bar:
         bar.set_description("evaluation")
         inputs = batch[0].to(args.device)
         label = batch[1].to(args.device)
         with torch.no_grad():
+            time_start = time.time()
             logit = model(inputs)
+            time_end = time.time()
             logits.append(logit.cpu().numpy())
             labels.append(label.cpu().numpy())
+            time_count.append(time_end-time_start)
+    print(sum(time_count)/len(time_count))
 
     logits = np.concatenate(logits, 0)
     labels = np.concatenate(labels, 0)
-    np.save("../data/preds_unlabel_train", logits)
-    print(logits)
-    exit()
+    # np.save("../data/preds_unlabel_train", logits)
+    # print(logits)
+    # exit()
     logits = F.softmax(torch.FloatTensor(logits))
     y_preds = logits[:, 1] > 0.5
     y_preds = y_preds.numpy()

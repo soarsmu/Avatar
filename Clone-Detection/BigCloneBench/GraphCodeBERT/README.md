@@ -33,7 +33,7 @@ CUDA_VISIBLE_DEVICES=1 python3 finetune.py \
     --code_length 384 \
     --data_flow_length 128 \
     --train_batch_size 16 \
-    --eval_batch_size 64 \
+    --eval_batch_size 100 \
     --learning_rate 2e-5 \
     --max_grad_norm 1.0 \
     --evaluate_during_training \
