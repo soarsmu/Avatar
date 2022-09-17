@@ -23,4 +23,4 @@ pip3 install -r requirements.txt
 
 ## How to run
 
-The scripts and instructions for each experiment are in the `README.md` files under each subfolder.
+The scripts and instructions for each experiment are in the `README.md` files under each subfolder. We also release all trained 3 MB models in this repo. 
