@@ -22,3 +22,7 @@ Please use `docker attach` to go inside the docker container.
 Then, for each experiment in our paper, the scripts and instructions are in the README.md files under each subfolder.
 
 We also release all trained 3 MB models and datasets in this repo. 
+
+## Note
+
+Here we remove all the License files for anonymity.
