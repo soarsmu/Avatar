@@ -17,4 +17,4 @@ dokcer run -it -v YOUR_LOCAL_REPO_PATH:/root/Avatar --gpus all YOUR_CUSTOM_TAG
 
 ## How to run
 
-The scripts and instructions for each experiment are in the `README.md` files under each subfolder. We also release all trained 3 MB models in this repo. 
+The scripts and instructions for each experiment are in the `README.md` files under each subfolder. We also release all trained 3 MB models and datasets in this repo. 

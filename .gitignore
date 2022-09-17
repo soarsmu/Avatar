@@ -129,8 +129,8 @@ dmypy.json
 .pyre/
 
 # *.bin
-*.txt
-*.jsonl
+# *.txt
+# *.jsonl
 *.json
 *.npy
 
