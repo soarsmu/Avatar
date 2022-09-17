@@ -25,4 +25,4 @@ We also release all trained 3 MB models and datasets in this repo.
 
 ## Misc
 
-Here we remove all the open source `LICENSE` files for anonymity.
+Here for anonymity, we remove all the open source `LICENSE` files.
