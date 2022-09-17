@@ -1,3 +1,4 @@
+```
 CUDA_VISIBLE_DEVICES=1 python3 distill.py \
     --do_train \
     --train_data_file=../../data/unlabel_train.txt \
@@ -16,3 +17,4 @@ CUDA_VISIBLE_DEVICES=1 python3 distill.py \
     --learning_rate 1e-4 \
     --epochs 10 \
     --seed 123456
+```
