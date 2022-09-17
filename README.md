@@ -23,6 +23,6 @@ Then, for each experiment in our paper, the scripts and instructions are in the 
 
 We also release all trained 3 MB models and datasets in this repo. 
 
-## Note
+## Misc
 
-Here we remove all the License files for anonymity.
+Here we remove all the open source `LICENSE` files for anonymity.
