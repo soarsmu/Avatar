@@ -1,3 +1,4 @@
+```
 mkdir log
 
 CUDA_VISIBLE_DEVICES=1 python3 finetune.py \
@@ -18,8 +19,8 @@ CUDA_VISIBLE_DEVICES=1 python3 finetune.py \
     --max_grad_norm 1.0 \
     --evaluate_during_training \
     --seed 123456 2>&1| tee log/finetune.log
-
-
+```
+```
 CUDA_VISIBLE_DEVICES=1 python3 finetune.py \
     --output_dir=checkpoints \
     --config_name=microsoft/graphcodebert-base \
@@ -38,7 +39,8 @@ CUDA_VISIBLE_DEVICES=1 python3 finetune.py \
     --max_grad_norm 1.0 \
     --evaluate_during_training \
     --seed 123456
-
+```
+```
 CUDA_VISIBLE_DEVICES=0 python3 finetune.py \
     --output_dir=checkpoints \
     --config_name=microsoft/graphcodebert-base \
@@ -57,3 +59,4 @@ CUDA_VISIBLE_DEVICES=0 python3 finetune.py \
     --max_grad_norm 1.0 \
     --evaluate_during_training \
     --seed 123456 2>&1| tee log/finetune.log
+```
