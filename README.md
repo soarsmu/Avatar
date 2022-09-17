@@ -10,15 +10,9 @@ docker build -t YOUR_CUSTOM_TAG .
 ```
 Be careful with the torch version that you need to use, modify the Dockerfile according to your cuda version pls.
 
-Then, please run the docker:
+Then, please run the docker container:
 ```
-dokcer run -it -v YOUR_LOCAL_REPO_PATH:/root/Compressor --gpus all YOUR_CUSTOM_TAG
-```
-
-After that, pls go inside the docker first, and then install some necessary libraries:
-
-```
-pip3 install -r requirements.txt
+dokcer run -it -v YOUR_LOCAL_REPO_PATH:/root/Avatar --gpus all YOUR_CUSTOM_TAG
 ```
 
 ## How to run
