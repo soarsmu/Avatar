@@ -1,6 +1,6 @@
 # Avatar
 
-This replication package contains the source code for fine-tuning pre-trained models, model simplification and training, as well as all trained compressed models.
+This replication package contains the source code for fine-tuning pre-trained models, surrogate-assist model compression and training, as well as all trained compressed models.
 
 ## Environment configuration
 
