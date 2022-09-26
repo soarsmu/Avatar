@@ -1,7 +1,6 @@
+To finetune the large model, pls run:
 ```
-mkdir log
-
-CUDA_VISIBLE_DEVICES=2 python3 finetune.py \
+python3 finetune.py \
     --do_train \
     --train_data_file=../../../data/clone_search/label_train.txt \
     --eval_data_file=../../../data/clone_search/valid_sampled.txt \
@@ -15,9 +14,8 @@ CUDA_VISIBLE_DEVICES=2 python3 finetune.py \
     --seed 123456 2>&1| tee log/finetune.log
 ```
 
-
 ```
-CUDA_VISIBLE_DEVICES=1 python3 finetune.py \
+python3 finetune.py \
     --do_eval \
     --train_data_file=../data/label_train.txt \
     --eval_data_file=../data/test_sampled.txt \

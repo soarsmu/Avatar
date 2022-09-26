@@ -462,9 +462,8 @@ def evaluate(args, model, tokenizer, eval_when_training=False):
     from sklearn.metrics import f1_score
     f1=f1_score(y_trues, y_preds, average="macro")             
     result = {
-        "eval_acc": np.mean(y_trues==y_preds),
+        "eval_acc": float(precision),
         "eval_recall": float(recall),
-        "eval_precision": float(precision),
         "eval_f1": float(f1),
         "eval_threshold":best_threshold,
         
@@ -511,8 +510,8 @@ def test(args, model, tokenizer, best_threshold=0):
         
         nb_eval_steps += 1
     best_threshold=0.5
-    time_count.append(time_end-time_start)
-    print(sum(time_count)/len(time_count))
+    # time_count.append(time_end-time_start)
+    # print(sum(time_count)/len(time_count))
 
     #output result
     logits=np.concatenate(logits,0)
@@ -526,10 +525,9 @@ def test(args, model, tokenizer, best_threshold=0):
     from sklearn.metrics import f1_score
     f1=f1_score(y_trues, y_preds, average="macro")             
     result = {
-        "test_acc": np.mean(y_trues==y_preds),
-        "test_recall": float(recall),
-        "test_precision": float(precision),
-        "test_f1": float(f1)
+        "eval_acc": float(precision),
+        "eval_recall": float(recall),
+        "eval_f1": float(f1)        
     }
 
     logger.info("***** Test results *****")
