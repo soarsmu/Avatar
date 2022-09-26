@@ -57,4 +57,4 @@ python3 distill.py \
 ```
 
 For the baseline model, we use the model from the official repository of the baseline paper:
-https://github.com/soarsmu/Compressor/tree/main/GraphCodeBERT/clone_detection.
+https://github.com/soarsmu/Compressor/tree/main/GraphCodeBERT/clone_detection. For users, pls go to their repo and grab the results.
