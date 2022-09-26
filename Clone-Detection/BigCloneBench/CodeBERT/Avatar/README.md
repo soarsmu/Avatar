@@ -1,5 +1,5 @@
 
-We encode model hyperparameters in the `surrogate.jsonl` files. To run evaluation using the released 3 MB model:
+We encode model hyperparameters in the `surrogate.jsonl` files. To run evaluation using our released 3 MB model:
 ```
 python3 distill.py \
     --do_eval \
@@ -42,4 +42,4 @@ python3 distill.py \
     --seed 123456
 ```
 
-For the baseline model, we use the model from the official repository of the baseline paper: https://github.com/soarsmu/Compressor/tree/main/CodeBERT/clone_detection. For users, pls go to their repo and grab the results.
+For the baseline model, we use the model from the official repository of the baseline paper: https://github.com/soarsmu/Compressor/tree/main/CodeBERT/clone_detection. For users, pls go to their repo and grab their results.

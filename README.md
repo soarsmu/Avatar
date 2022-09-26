@@ -21,12 +21,12 @@ dokcer run -it -v YOUR_LOCAL_REPO_PATH:/root/Avatar --gpus all YOUR_CUSTOM_TAG
 
 Please use `docker attach` to go inside the docker container. 
 
-Then, for each experiment in our paper, the scripts and instructions are in the `README.md` files under each subfolder. More specifically,
+Then, for each experiment in our paper, the scripts and instructions are in the `README.md` files under the each subfolder called `Avatar`. More specifically,
 
 * Run the compressed CodeBERT on Clone Detection task: `Clone-Detection/BigCloneBench/CodeBERT/Avatar/README.md`
 * Run the compressed GraphCodeBERT on Clone Detection task: `Clone-Detection/BigCloneBench/GraphCodeBERT/Avatar/README.md`
-* Run the compressed CodeBERT on the Devign dataset of Vulnerability Detection task: `Vulnerability-Detection/Devign/CodeBERT/README.md`
-* Run the compressed GraphCodeBERT on the Devign dataset of Vulnerability Detection task: `Vulnerability-Detection/Devign/GraphCodeBERT/README.md`
+* Run the compressed CodeBERT on the Devign dataset of Vulnerability Detection task: `Vulnerability-Detection/Devign/CodeBERT/Avatar/README.md`
+* Run the compressed GraphCodeBERT on the Devign dataset of Vulnerability Detection task: `Vulnerability-Detection/Devign/GraphCodeBERT/Avatar/README.md` 
 * Run the compressed CodeBERT on the ReVeal dataset of Vulnerability Detection task: `Vulnerability-Detection/ReVeal/CodeBERT/README.md`
 * Run the compressed GraphCodeBERT on the ReVeal dataset of Vulnerability Detection task: `Vulnerability-Detection/ReVeal/GraphCodeBERT/README.md`
 

@@ -1,5 +1,5 @@
 
-To run evaluation using the released 3 MB model:
+To run evaluation using our released 3 MB model:
 ```
 python3 distill.py \
     --output_dir=../checkpoint \
@@ -57,4 +57,4 @@ python3 distill.py \
 ```
 
 For the baseline model, we use the model from the official repository of the baseline paper:
-https://github.com/soarsmu/Compressor/tree/main/GraphCodeBERT/clone_detection. For users, pls go to their repo and grab the results.
+https://github.com/soarsmu/Compressor/tree/main/GraphCodeBERT/clone_detection. For users, pls go to their repo and grab their results.
