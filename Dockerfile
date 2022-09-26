@@ -1,4 +1,4 @@
-FROM ubuntu:20.04
+FROM ubuntu:18.04
 
 ARG DEBIAN_FRONTEND=noninteractive
 
@@ -18,8 +18,8 @@ WORKDIR /root
 RUN pip3 install --upgrade pip
 RUN pip3 install --upgrade setuptools
 # Be careful with the torch version that you need to use, decide it according to your cuda version
-# RUN pip3 install torch==1.8.1+cu101 -f https://download.pytorch.org/whl/torch_stable.html
-RUN pip3 install torch --extra-index-url https://download.pytorch.org/whl/cu116
+RUN pip3 install torch==1.8.1+cu101 -f https://download.pytorch.org/whl/torch_stable.html
+# RUN pip3 install torch --extra-index-url https://download.pytorch.org/whl/cu116
 RUN pip3 install transformers==4.21.1 scikit-learn==1.1.2 tree-sitter==0.20.0 gdown==4.5.1
 
 ENV NVIDIA_VISIBLE_DEVICES all
