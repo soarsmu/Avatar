@@ -41,3 +41,6 @@ python3 distill.py \
     --epochs 10 \
     --seed 123456
 ```
+
+For the baseline model, we use the model and results from
+https://github.com/soarsmu/Compressor/tree/main/CodeBERT/clone_detection.

@@ -55,3 +55,6 @@ python3 distill.py \
     --evaluate_during_training \
     --seed 123456
 ```
+
+For the baseline model, we use the model and results from
+https://github.com/soarsmu/Compressor/tree/main/GraphCodeBERT/clone_detection.
