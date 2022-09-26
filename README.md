@@ -10,7 +10,7 @@ We provide a `Dockerfile` to help build the experimental environment. Please run
 ```
 docker build -t YOUR_CUSTOM_TAG .
 ```
-Be careful with the torch version that you need to use, modify the `Dockerfile` according to your cuda version pls.
+**NOTE❕:** Be careful with the torch version that you need to use, modify the `Dockerfile` according to your cuda version pls.
 
 Then, please run the docker container:
 ```
