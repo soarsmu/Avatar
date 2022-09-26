@@ -56,5 +56,5 @@ python3 distill.py \
     --seed 123456
 ```
 
-For the baseline model, we use the model and results from
+For the baseline model, we use the model from the official repository of the baseline paper:
 https://github.com/soarsmu/Compressor/tree/main/GraphCodeBERT/clone_detection.
