@@ -91,8 +91,8 @@ def evaluate(model, eval_dataloader):
         bar = tqdm(eval_dataloader, total=len(eval_dataloader))
         bar.set_description("Evaluation")
         for batch in bar:
-            texts = batch[0].to("cpu")
-            label = batch[1].to("cpu")
+            texts = batch[0].to("cuda")
+            label = batch[1].to("cuda")
             time_start = time.time()
             prob = model(texts)
             time_end = time.time()
@@ -110,8 +110,7 @@ def evaluate(model, eval_dataloader):
     precision = precision_score(labels_all, preds)
     f1 = f1_score(labels_all, preds)
     results = {
-        "eval_acc": np.mean(labels_all == preds),
-        "eval_precision": float(precision),
+        "eval_acc": float(precision),
         "eval_recall": float(recall),
         "eval_f1": float(f1)
     }
@@ -163,7 +162,7 @@ def main():
 
     args = parser.parse_args()
 
-    args.device = torch.device("cpu")
+    args.device = torch.device("cuda")
     args.n_gpu = torch.cuda.device_count()
 
     args.per_gpu_train_batch_size = args.train_batch_size//args.n_gpu
@@ -194,7 +193,7 @@ def main():
         config.intermediate_size = su["intermediate_size"]
         config.vocab_size = su["vocab_size"]
         config.num_hidden_layers = su["n_layers"]
-        # config.hidden_dropout_prob = 0.2
+        config.hidden_dropout_prob = 0.2
         model = Model(RobertaModel(config=config), config)
 
         if args.do_train:
