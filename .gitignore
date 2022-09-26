@@ -131,7 +131,7 @@ dmypy.json
 # *.bin
 # *.txt
 # *.jsonl
-# *.json
+*.json
 *.npy
 
 Vulnerability-Detection/Devign/CodeBERT/checkpoint
