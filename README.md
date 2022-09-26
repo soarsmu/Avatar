@@ -34,4 +34,6 @@ We also release all trained 3 MB models and datasets in this repo. Users can dir
 
 ## Misc
 
+Due to the random nature of neural networks and our GA algorithm, users may obtain slightly different results. Please note that such results usually can be tolerated, i.e., they mostly do not conflict with the conclusions of the paper.
+
 Here for anonymity, we remove all the open source `LICENSE` files.
