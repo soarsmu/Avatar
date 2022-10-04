@@ -4,7 +4,7 @@ This replication package contains the source code for surrogate-assisted model c
 
 ## Environment configuration
 
-To reproduce our experiments,  machine with GPUs and NVIDIA CUDA toolkit is required.
+To reproduce our experiments,  machines with GPUs and NVIDIA CUDA toolkit are required.
 
 We provide a `Dockerfile` to help build the experimental environment. Please run the following scripts to to compile a docker image:
 ```
