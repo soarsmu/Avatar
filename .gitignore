@@ -128,11 +128,12 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
-# *.bin
+*.bin
 # *.txt
 # *.jsonl
 *.json
 *.npy
+*.csv
 
 Vulnerability-Detection/Devign/CodeBERT/checkpoint
 Vulnerability-Detection/Devign/CodeBERT/checkpoints/finetune
