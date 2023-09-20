@@ -1,0 +1,3 @@
+```
+CUDA_VISIBLE_DEVICES=3 python3 MOO.py 2>&1| tee ../logs/search.log
+```
