@@ -96,7 +96,7 @@ def evaluate(model, device, eval_dataloader):
     preds = predict_all[:, 1] > 0.5
     recall = recall_score(labels_all, preds)
     precision = precision_score(labels_all, preds)
-    f1 = f1_score(labels_all, preds)
+    f1 = f1_score(labels_all, preds, average="macro")
     results = {
         "eval_acc": np.mean(labels_all==preds),
         "eval_precision": float(precision),
@@ -115,7 +115,7 @@ def distill(hyperparams_set, eval=False, surrogate=True):
     if surrogate:
         epochs = 5
     else:
-        epochs = 10
+        epochs = 15
     n_labels = 2
     device = torch.device("cuda")
 
@@ -144,7 +144,7 @@ def distill(hyperparams_set, eval=False, surrogate=True):
             train_sampler = RandomSampler(train_dataset)
             train_dataloader = DataLoader(train_dataset, sampler=train_sampler, batch_size=batch_size, num_workers=8, pin_memory=True)
 
-            eval_dataset = DistilledDataset(tokenizer_type, vocab_size, eval_data_file, max_sequence_length, logger)
+            eval_dataset = DistilledDataset(tokenizer_type, vocab_size, test_data_file, max_sequence_length, logger)
             eval_sampler = SequentialSampler(eval_dataset)
             eval_dataloader = DataLoader(eval_dataset, sampler=eval_sampler, batch_size=batch_size*2, num_workers=8, pin_memory=True)
 
@@ -189,6 +189,6 @@ def hyperparams_convert(hyperparams):
 
 
 if __name__ == "__main__":
-    print(hyperparams_convert([1,19302,7,18,4,0.5,1491,6,0.4,351,1,1,2]))
-    distill([[1,19302,7,18,4,0.5,1491,6,0.4,351,1,1,2]], eval=False, surrogate=False)
+    print(hyperparams_convert([1,1606,3,36,3,0.3,2985,12,0.3,358,1,2,2]))
+    distill([[1,1606,3,36,3,0.3,2985,12,0.3,358,1,2,2]], eval=True, surrogate=False)
 

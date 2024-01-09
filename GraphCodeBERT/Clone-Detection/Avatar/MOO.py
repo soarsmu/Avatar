@@ -6,7 +6,7 @@ import numpy as np
 
 from tqdm import tqdm
 from distill_utils import distill, hyperparams_convert
-from surrogate import predictor
+from surrogate import predictor, reverse_hyperparams_convert
 from flops import TransformerHparams
 from reduction import reduction_z3
 
@@ -228,32 +228,32 @@ if __name__ == "__main__":
 
     pop = generate_adaptive_random_population(20, lb, ub)
 
-    surrogate_data = []
-    for each_pop in pop:
-        surrogate_data.append(each_pop.get_candidate_values())
+    # surrogate_data = []
+    # for each_pop in pop:
+    #     surrogate_data.append(each_pop.get_candidate_values())
 
-    accs = distill(surrogate_data, surrogate=True)
+    # accs = distill(surrogate_data, surrogate=True)
 
-    with open("surrogate_train_data.csv", "w") as f:
-        writer = csv.writer(f)
-        writer.writerow(["Tokenizer", "Vocab Size", "Num Hidden Layers", "Hidden Size", "Hidden Act", "Hidden Dropout Prob", "Intermediate Size", "Num Attention Heads", "Attention Probs Dropout Prob", "Max Sequence Length", "Position Embedding Type", "Learning Rate", "Batch Size", "Accuracy"])
-        for d, acc in zip(surrogate_data, accs):
-            writer.writerow(hyperparams_convert(d) + [acc])
+    # with open("surrogate_train_data.csv", "w") as f:
+    #     writer = csv.writer(f)
+    #     writer.writerow(["Tokenizer", "Vocab Size", "Num Hidden Layers", "Hidden Size", "Hidden Act", "Hidden Dropout Prob", "Intermediate Size", "Num Attention Heads", "Attention Probs Dropout Prob", "Max Sequence Length", "Position Embedding Type", "Learning Rate", "Batch Size", "Accuracy"])
+    #     for d, acc in zip(surrogate_data, accs):
+    #         writer.writerow(hyperparams_convert(d) + [acc])
 
-    surrogate_model = predictor([surrogate_data, accs])
+    # surrogate_model = predictor([surrogate_data, accs])
 
-    # import ast
-    # with open("accs.jsonl") as f:
-    #     data = f.readlines()
-    #     surrogate_data_acc = []
-    #     data1 = []
-    #     data2 = []
-    #     for line in data:
-    #         data1.append(ast.literal_eval(line.split("] ")[0]+"]"))
-    #         data2.append(float(line.split("] ")[1]))
-
-    # surrogate_data_acc = [data1, data2]
-    # surrogate_model = predictor(surrogate_data_acc)
+    train_data = []
+    train_accs = []
+    with open("surrogate_train_data.csv") as f:
+        reader = csv.reader(f) 
+        for i, row in enumerate(reader): 
+            if i == 0:
+                continue
+            row = reverse_hyperparams_convert(row)
+            train_data.append([float(x) for x in row[0]])
+            train_accs.append(row[1])
+    
+    surrogate_model = predictor([train_data, train_accs])
 
     evaulate_population(pop, surrogate_model)
     archive = []

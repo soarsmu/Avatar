@@ -1,5 +1,5 @@
 ```
-CUDA_VISIBLE_DEVICES=1 python3 distill.py \
+CUDA_VISIBLE_DEVICES=4 python3 distill.py \
     --do_train \
     --train_data_file=../data/unlabel_train.txt \
     --eval_data_file=../data/valid_sampled.txt \
@@ -18,7 +18,7 @@ CUDA_VISIBLE_DEVICES=1 python3 distill.py \
 ```
 
 ```
-CUDA_VISIBLE_DEVICES=1 python3 distill.py \
+CUDA_VISIBLE_DEVICES=4 python3 distill.py \
     --do_eval \
     --train_data_file=../data/unlabel_train.txt \
     --eval_data_file=../data/test_sampled.txt \

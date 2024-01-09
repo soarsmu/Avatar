@@ -111,7 +111,7 @@ def distill(hyperparams_set, eval=False, surrogate=True):
     train_data_file = "../data/unlabel_train.txt"
     eval_data_file = "../data/valid_sampled.txt"
     test_data_file = "../data/test_sampled.txt"
-    seed = 42
+    seed = 123456
     if surrogate:
         epochs = 5
     else:
@@ -189,6 +189,6 @@ def hyperparams_convert(hyperparams):
 
 
 if __name__ == "__main__":
-    print(hyperparams_convert([1,19302,7,18,4,0.5,1491,6,0.4,351,1,1,3]))
-    distill([[1,19302,7,18,4,0.5,1491,6,0.4,351,1,1,2]], eval=False, surrogate=False)
+    print(hyperparams_convert([1,27505,1,24,3,0.2,1508,2,0.1,512,1,2,2]))
+    distill([[1,27505,3,36,3,0.3,1508,12,0.2,358,1,2,2]], eval=True, surrogate=False)
 

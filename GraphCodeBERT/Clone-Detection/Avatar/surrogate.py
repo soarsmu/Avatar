@@ -1,3 +1,4 @@
+import csv
 import random
 import logging
 
@@ -53,3 +54,43 @@ def predictor(dataset):
     # logging.info("MAE: {}".format(mean_absolute_error(y_test, preds)))
 
     return reg
+
+def reverse_hyperparams_convert(hyperparams):
+    tokenizer_type = {"BPE": 1, "WordPiece": 2, "Unigram": 3, "Word": 4}
+    hidden_act = {"gelu": 1, "relu": 2, "silu": 3, "gelu_new": 4}
+    position_embedding_type = {"absolute": 1, "relative_key": 2, "relative_key_query": 3}
+    learning_rate = {"0.001": 1, "0.0001": 2, "5e-05": 3}
+    batch_size = {"8": 1, "16": 2}
+
+    return [
+        tokenizer_type[hyperparams[0]],
+        hyperparams[1],
+        hyperparams[2],
+        hyperparams[3],
+        hidden_act[hyperparams[4]],
+        hyperparams[5],
+        hyperparams[6],
+        hyperparams[7],
+        hyperparams[8],
+        hyperparams[9],
+        position_embedding_type[hyperparams[10]],
+        learning_rate[hyperparams[11]],
+        batch_size[hyperparams[12]]
+    ], float(hyperparams[13])
+
+
+if __name__ == "__main__":
+    train_data = []
+    train_accs = []
+    with open("surrogate_train_data.csv") as f:
+        reader = csv.reader(f) 
+        for i, row in enumerate(reader): 
+            if i == 0:
+                continue
+            row = reverse_hyperparams_convert(row)
+            train_data.append([float(x) for x in row[0]])
+            train_accs.append(row[1])
+    
+    reg = predictor([train_data, train_accs])
+            
+            
