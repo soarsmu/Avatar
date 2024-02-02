@@ -29,6 +29,7 @@ Due to the random nature of neural networks and our GA algorithm, users may obta
 
 If you meet any problems when using our code, please contact Jieke SHI by [jiekeshi@smu.edu.sg](mailto:jiekeshi@smu.edu.sg). Many thanks!
 
+This paper has been accepted by the Software Engineering in Society Track of the 46th IEEE/ACM International Conference on Software Engineering (ICSE '24). The arXiv version can be viewed by [this link](https://arxiv.org/abs/2309.04076).
 If you use any code from our repo in your paper, pls cite:
 ```bibtex
 @misc{shi2023smaller,
