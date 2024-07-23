@@ -32,15 +32,11 @@ If you meet any problems when using our code, please contact Jieke SHI by [jieke
 This paper has been accepted by the Software Engineering in Society Track of the 46th IEEE/ACM International Conference on Software Engineering (ICSE '24). The arXiv version can be viewed by [this link](https://arxiv.org/abs/2309.04076).
 If you use any code from our repo in your paper, pls cite:
 ```bibtex
-@misc{shi2023smaller,
-      title={Greening Large Language Models of Code},
-      author={Jieke Shi and Zhou Yang and Hong Jin Kang and Bowen Xu and Junda He and David Lo},
-      year={2023},
-      eprint={2309.04076},
-      archivePrefix={arXiv},
-      primaryClass={cs.SE}
+@inproceedings{shi2024greening,
+  title={Greening large language models of code},
+  author={Shi, Jieke and Yang, Zhou and Kang, Hong Jin and Xu, Bowen and He, Junda and Lo, David},
+  booktitle={Proceedings of the 46th International Conference on Software Engineering: Software Engineering in Society},
+  pages={142--153},
+  year={2024}
 }
 ```
-
-
-
