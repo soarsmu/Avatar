@@ -33,10 +33,19 @@ This paper has been accepted by the Software Engineering in Society Track of the
 If you use any code from our repo in your paper, pls cite:
 ```bibtex
 @inproceedings{shi2024greening,
-  title={Greening large language models of code},
-  author={Shi, Jieke and Yang, Zhou and Kang, Hong Jin and Xu, Bowen and He, Junda and Lo, David},
-  booktitle={Proceedings of the 46th International Conference on Software Engineering: Software Engineering in Society},
-  pages={142--153},
-  year={2024}
+  author = {Shi, Jieke and Yang, Zhou and Kang, Hong Jin and Xu, Bowen and He, Junda and Lo, David},
+  title = {Greening Large Language Models of Code},
+  year = {2024},
+  isbn = {9798400704994},
+  publisher = {Association for Computing Machinery},
+  address = {New York, NY, USA},
+  url = {https://doi-org.libproxy.smu.edu.sg/10.1145/3639475.3640097},
+  doi = {10.1145/3639475.3640097},
+  booktitle = {Proceedings of the 46th International Conference on Software Engineering: Software Engineering in Society},
+  pages = {142–153},
+  numpages = {12},
+  keywords = {language models of code, configuration tuning, multi-objective optimization},
+  location = {Lisbon, Portugal},
+  series = {ICSE-SEIS'24}
 }
 ```
